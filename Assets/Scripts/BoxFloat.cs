@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueBox : Box
+public class BoxFloat : Box
 {
     float distance;
     float speed;

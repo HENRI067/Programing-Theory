@@ -4,24 +4,26 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
-    private bool mouseOver;
+    public bool surfaceTouched;
 
-
+    //the white box uses this script that why this is here
     private void Update() { BoxUpdate(); }
 
+
+
+
+    private void Awake()
+    {
+        surfaceTouched = false;
+    }
     protected void BoxUpdate()
     {
         if (transform.position.y < -50f) Destroy(this.gameObject);
-        if (mouseOver) transform.Find("Indicator").gameObject.SetActive(true); 
-        else transform.Find("Indicator").gameObject.SetActive(false);
     }
 
-    private void OnMouseOver()
+    private void OnCollisionEnter(Collision collision)
     {
-        mouseOver = true;
     }
-    private void OnMouseExit()
-    {
-        mouseOver = false;
-    }
+
+
 }
