@@ -4,26 +4,17 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
-    public bool surfaceTouched;
-
-    //the white box uses this script that why this is here
-    private void Update() { BoxUpdate(); }
-
-
-
-
-    private void Awake()
+    
+    private void Update() 
     {
-        surfaceTouched = false;
+        BoxUpdate();
+
     }
     protected void BoxUpdate()
     {
         if (transform.position.y < -50f) Destroy(this.gameObject);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-    }
 
 
 }

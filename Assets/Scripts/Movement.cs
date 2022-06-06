@@ -25,12 +25,14 @@ public class Movement : MonoBehaviour
         //WASD
         Vector3 keyboardInput = GetInput("Keyboard");
         Rigidbody.velocity = new Vector3(speed * keyboardInput.x, Rigidbody.velocity.y, speed * keyboardInput.z);
+
         //Jump
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             Rigidbody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
         }
-        if (Rigidbody.velocity.y < 0 && Rigidbody.velocity.y > -1f && IsGrounded() == false) Rigidbody.AddForce(Vector3.down * downForce);
+        if (Rigidbody.velocity.y < 0 && Rigidbody.velocity.y > -4f && IsGrounded() == false) Rigidbody.AddForce(Vector3.down * downForce,ForceMode.Acceleration);
+
         //Mouse
         Vector2 mouseInput = GetInput("Mouse");
         transform.Rotate(Vector3.up * mouseInput.x);
@@ -52,15 +54,9 @@ public class Movement : MonoBehaviour
         else
         { isGrounded = false; }
 
-        if (Physics.Raycast(transform.position + new Vector3(0, 1, 0), Vector3.down,out RaycastHit hit, 1.1f))
-        {
-            if (hit.transform.CompareTag("Box")) print("on a box");
-        }
-
-
-
         return isGrounded;
     }
+
     //Get "Keyboard" or "Mouse" Input
     private Vector3 GetInput(string input)
     {
@@ -87,12 +83,4 @@ public class Movement : MonoBehaviour
         return playerInput;
     }
 
-    private void OnDrawGizmos()
-    {
-        if (Physics.BoxCast(transform.position + Vector3.up * 0.5f, new Vector3(0.3f, 0.25f, 0.3f), Vector3.down, out RaycastHit hit, Quaternion.identity, 0.5f, jumplayermask))
-        {
-            Gizmos.DrawCube(transform.position + Vector3.down * hit.distance, new Vector3(0.6f, 0.5f, 0.6f));
-        }
-
-    }
 }
