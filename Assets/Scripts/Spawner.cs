@@ -28,8 +28,7 @@ public class Spawner : MonoBehaviour
     private void Update()
     {
         int boxesUnlocked = GameManager.Instance.boxUnlucked;
-
-        if(boxesUnlocked > 0)
+        if (boxesUnlocked > 0)
         {
             //
             spawnPlacement.gameObject.SetActive(true);
@@ -74,10 +73,10 @@ public class Spawner : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2) && boxesUnlocked >= 2) boxSelected = 1;
         if (Input.GetKeyDown(KeyCode.Alpha3) && boxesUnlocked >= 3) boxSelected = 2;
 
-        if(Input.GetMouseButtonDown(0) && boxesUnlocked > 0)
+        if (Input.GetMouseButtonDown(0) && boxesUnlocked > 0 && GameManager.Instance.GetSlider(boxSelected).value > 0)
         {
-
-            Instantiate(Boxes[boxSelected],spawnPlacement.position,spawnPlacement.rotation);
+            GameManager.Instance.RemoveBlock(boxSelected);
+            Instantiate(Boxes[boxSelected], spawnPlacement.position, spawnPlacement.rotation);
         }
 
     }

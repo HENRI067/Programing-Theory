@@ -8,42 +8,40 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public int boxUnlucked = 0;
     private bool mouseIsLocked;
-    [SerializeField] private Transform slider1;
-    [SerializeField] private Transform slider2;
-    [SerializeField] private Transform slider3;
-    public List<Transform> Sliders { get; private set; }
+    public List<RectTransform> Sliders;
     void Start()
     {
-        Sliders.Add(slider1); Sliders.Add(slider2); Sliders.Add(slider3);
-
-
         Instance = this;
         mouseIsLocked = true;
+        ResetBlockMeter();
     }
 
     void Update()
     {
-        if (boxUnlucked >= 1) slider1.gameObject.SetActive(true);
-        else slider1.gameObject.SetActive(false);
-        if (boxUnlucked >= 2) slider2.gameObject.SetActive(true);
-        else slider2.gameObject.SetActive(false);
-        if (boxUnlucked >= 3) slider3.gameObject.SetActive(true);
-        else slider3.gameObject.SetActive(false);
+
+
+        if (boxUnlucked >= 1) Sliders[0].gameObject.SetActive(true);
+        else Sliders[0].gameObject.SetActive(false);
+        if (boxUnlucked >= 2) Sliders[1].gameObject.SetActive(true);
+        else Sliders[1].gameObject.SetActive(false);
+        if (boxUnlucked >= 3) Sliders[2].gameObject.SetActive(true);
+        else Sliders[2].gameObject.SetActive(false);
 
         if (GameObject.Find("Player").transform.position.y < -55) RestartScene();
         LockMouse();
 
     }
-
-
-
-
-
-
-
-    public void ResetSliders()
+    public Slider GetSlider(int s)
     {
-
+        return Sliders[s].GetComponent<Slider>();
+    }
+    public void ResetBlockMeter()
+    {
+        foreach(RectTransform rc in Sliders)
+        {
+            Slider S = rc.GetComponent<Slider>();
+            S.value = S.maxValue;
+        }
     }
     public void RemoveBlock(int slider)
     {
