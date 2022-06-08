@@ -50,7 +50,7 @@ public class floatBox : Box
 
     private void Update()
     {
-        BoxUpdate();
+        BoxUpdate();         //INHERITANCE
         
         [...]
     }
