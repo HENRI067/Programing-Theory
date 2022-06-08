@@ -27,6 +27,7 @@ public class floatBox : Box
 
     private void Update()
     {
+        BoxUpdate();
         if (flyUp)RB.velocity = Vector3.up * upSpeed;
     }
 
