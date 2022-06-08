@@ -58,8 +58,35 @@ but apart from this script all of the other ones have a bunch of repetitive line
 
 ****
 - ## Demonstration of inheritance
-The project I made consisted of a player and 3 boxes that the player could spawn to make him go places. I didn't realy think much about what to do to demonstrate inheritance, so I just made a box class and used it on all of the boxes 
+The project I made consisted of a player and 3 boxes that the player could spawn and use to traverse the map. I didn't realy think much about what to do to demonstrate inheritance, so I just made a box class and used it on all of the boxes 
 ![image](https://user-images.githubusercontent.com/40847844/172512424-c77cc2b1-b4df-42a0-b329-57a944bc256f.png)
 
+the normal box has the box.cs script atached to it
+the floaty box use the floatBox.cs wich is a child class of the box.cs 
+and the last one use the PlatformBox.cs, also a child class.
+But the only thing I could come up with for these 3 boxes was that the parent class gets destroyed when it falls off the map so the child classes should also have the same behaviour.
+```
+public class Box : MonoBehaviour
+{    
+    private void Update() 
+    {
+        BoxUpdate();
+    }
+    protected void BoxUpdate()
+    {
+        if (transform.position.y < -50f) Destroy(this.gameObject);
+    }
+}
 
+```
+```
+using System.Collections.Generic;
+using System.Collections;
+using UnityEngine;
+
+public class floatBox : Box
+{
+[...]
+}
+```
 
