@@ -6,6 +6,8 @@
 I ended up not remembering that I had to do branches and commit messages cause I didn't continue working on the project for like 3 days and forgot what I had to do, + I didn't even went to the mission to see what the mission was asking for :p.
 ![image](https://user-images.githubusercontent.com/40847844/172508221-89a5e8a9-3164-405e-86d3-3348feb1add7.png)
 
+
+ 
 - ## Demonstration of abstraction
 I think I don't have any problem making abstract code and I think the player movement script that I wrote show a little bit of abstraction that I made for the code to look nicer
 ```
@@ -41,13 +43,13 @@ private Vector3 GetInput(string input)
 
 
         //WASD
-        **Vector3 keyboardInput = GetInput("Keyboard");**
+        Vector3 keyboardInput = GetInput("Keyboard"); //Same method for getting mouse and keyboard input
         Rigidbody.velocity = new Vector3(speed * keyboardInput.x, Rigidbody.velocity.y, speed * keyboardInput.z);
         
         [...]
         
         //Mouse
-        **Vector2 mouseInput = GetInput("Mouse");**
+        Vector2 mouseInput = GetInput("Mouse"); //Same method for getting mouse and keyboard input
         transform.Rotate(Vector3.up * mouseInput.x);
         camRotation -= mouseInput.y; camRotation = Mathf.Clamp(camRotation, -85, 85);
         Camera.transform.localRotation = Quaternion.Euler(camRotation, 0, 0);
