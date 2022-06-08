@@ -7,7 +7,7 @@ I ended up not remembering that I had to do branches and commit messages cause I
 ![image](https://user-images.githubusercontent.com/40847844/172508221-89a5e8a9-3164-405e-86d3-3348feb1add7.png)
 
  ****
-- ## Demonstration of abstraction
+- ##Demonstration of abstraction
 I think I don't have any problem making abstract code and I think the player movement script that I wrote show a little bit of abstraction that I made for the code to look nice
 ```
 //Get "Keyboard" or "Mouse" Input
@@ -57,15 +57,15 @@ private Vector3 GetInput(string input)
 but apart from this script all of the other ones have a bunch of repetitive lines on them that I could have improved but decided not to cause I was taking too much time to finish this mission.
 
 ****
-- ## Demonstration of inheritance
+- ##Demonstration of inheritance
 The project I made consisted of a player and 3 boxes that the player could spawn and use to traverse the map. I didn't realy think much about what to do to demonstrate inheritance, so I just made a box class and used it on all of the boxes 
 ![image](https://user-images.githubusercontent.com/40847844/172512424-c77cc2b1-b4df-42a0-b329-57a944bc256f.png)
 
-the normal box has the box.cs script atached to it
-the floaty box use the floatBox.cs wich is a child class of the box.cs 
-and the last one use the PlatformBox.cs, also a child class.
+-the normal box has the box.cs script atached to it
+-the floaty box use the floatBox.cs wich is a child class of the box.cs 
+-and the last one use the PlatformBox.cs, also a child class.
 But the only thing I could come up with for these 3 boxes was that the parent class gets destroyed when it falls off the map so the child classes should also have the same behaviour.
-[Box.cs](https://github.com/HENRI067/Programing-Theory/blob/main/Assets/Scripts/Box.cs)
+ [Box.cs](https://github.com/HENRI067/Programing-Theory/blob/main/Assets/Scripts/Box.cs)
 ```
 public class Box : MonoBehaviour
 {    
@@ -80,28 +80,27 @@ public class Box : MonoBehaviour
 }
 
 ```
-[FloatBox.cs](https://github.com/HENRI067/Programing-Theory/blob/main/Assets/Scripts/floatBox.cs)
+ [FloatBox.cs](https://github.com/HENRI067/Programing-Theory/blob/main/Assets/Scripts/floatBox.cs)
 ```
 public class floatBox : Box
 {
-    [SerializeField] float timeFlying = 4f;
-    [SerializeField] float upSpeed = 1f;
-
-    bool flyUp = false;
-    private Rigidbody RB;
+    [...]
      
     private IEnumerator Start()
     {
-        [...]
+        [...] 
     }
 
     private void Update()
     {
         BoxUpdate();
         
-        if (flyUp)RB.velocity = Vector3.up * upSpeed;
+        [...]
     }
 
 }
 ```
-
+yeah not the best example of inheritance but at least I learned how to do it(i think)._.
+ 
+ - ## Demonstration of encapsulation
+ 
