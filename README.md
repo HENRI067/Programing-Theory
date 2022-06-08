@@ -65,7 +65,7 @@ the normal box has the box.cs script atached to it
 the floaty box use the floatBox.cs wich is a child class of the box.cs 
 and the last one use the PlatformBox.cs, also a child class.
 But the only thing I could come up with for these 3 boxes was that the parent class gets destroyed when it falls off the map so the child classes should also have the same behaviour.
-![Box.cs](https://github.com/HENRI067/Programing-Theory/blob/main/Assets/Scripts/Box.cs)
+[Box.cs](https://github.com/HENRI067/Programing-Theory/blob/main/Assets/Scripts/Box.cs)
 ```
 public class Box : MonoBehaviour
 {    
@@ -80,7 +80,7 @@ public class Box : MonoBehaviour
 }
 
 ```
-![FloatBox.cs](https://github.com/HENRI067/Programing-Theory/blob/main/Assets/Scripts/floatBox.cs)
+[FloatBox.cs](https://github.com/HENRI067/Programing-Theory/blob/main/Assets/Scripts/floatBox.cs)
 ```
 public class floatBox : Box
 {
