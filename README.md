@@ -58,4 +58,6 @@ but apart from this script all of the other ones have a bunch of repetitive line
 
 ****
 - ## Demonstration of inheritance
-The project I made consisted of a player and 3 boxes that the player could spawn to make him go places
+The project I made consisted of a player and 3 boxes that the player could spawn to make him go places. I didn't realy think much about what to do to demonstrate inheritance, so I just made a box class and used it on all of the boxes 
+![image](https://user-images.githubusercontent.com/40847844/172512293-1e984595-0cb2-42a8-8116-fe13e02b2a23.png)
+
