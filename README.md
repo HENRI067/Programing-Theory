@@ -1,6 +1,6 @@
 # Programing Theory
  
-![mission](https://user-images.githubusercontent.com/40847844/172507040-a3324ebd-79be-4b84-a85b-9dacb94bb2f2.jpg)
+![image](https://user-images.githubusercontent.com/40847844/172690918-ee809a07-ce10-4cd7-b9f7-af70a3f22f2e.png)
 
 - ## A link to the github showing multiple commits with messages and **at least two branches**
 I ended up not remembering that I had to do branches and commit messages cause I didn't continue working on the project for like 3 days and forgot what I had to do, + I didn't even went to the mission to see what the mission was asking for :p.
