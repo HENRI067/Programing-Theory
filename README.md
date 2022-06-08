@@ -6,10 +6,9 @@
 I ended up not remembering that I had to do branches and commit messages cause I didn't continue working on the project for like 3 days and forgot what I had to do, + I didn't even went to the mission to see what the mission was asking for :p.
 ![image](https://user-images.githubusercontent.com/40847844/172508221-89a5e8a9-3164-405e-86d3-3348feb1add7.png)
 
-
- 
+ ****
 - ## Demonstration of abstraction
-I think I don't have any problem making abstract code and I think the player movement script that I wrote show a little bit of abstraction that I made for the code to look nicer
+I think I don't have any problem making abstract code and I think the player movement script that I wrote show a little bit of abstraction that I made for the code to look nice
 ```
 //Get "Keyboard" or "Mouse" Input
 private Vector3 GetInput(string input)
@@ -55,3 +54,8 @@ private Vector3 GetInput(string input)
         Camera.transform.localRotation = Quaternion.Euler(camRotation, 0, 0);
     }
 ```
+but apart from this script all of the other ones have a bunch of repetitive lines on them that I could have improved but decided not to cause I was taking too much time to finish this mission.
+
+****
+- ## Demonstration of inheritance
+The project I made consisted of a player and 3 boxes that the player could spawn to make him go places
